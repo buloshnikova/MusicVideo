@@ -24,6 +24,9 @@ class Videos {
     private var _vLinkToiTunes:String
     private var _vReleaseDte:String
     
+    //gets created from the UI
+    var vImageData:NSData?
+    
     // Getter
     
     var vName: String {
@@ -36,6 +39,34 @@ class Videos {
     
     var vVideoUrl: String {
         return _vVideoUrl
+    }
+    
+    var vRights:String {
+        return _vRights
+    }
+    
+    var vPrice:String {
+        return _vPrice
+    }
+    
+    var vArtist:String {
+        return _vArtist
+    }
+    
+    var vImid:String {
+        return _vImid
+    }
+    
+    var vGenre:String {
+        return _vGenre
+    }
+    
+    var vLinkToiTunes:String {
+        return _vLinkToiTunes
+    }
+    
+    var vReleaseDte:String {
+        return _vReleaseDte
     }
     
     init(data:JSONDictionary) {
