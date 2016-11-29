@@ -18,21 +18,50 @@ class APIManager {
         let session = URLSession(configuration: config)
         
         
-        //        let session = NSURLSession.sharedSession()
+        //let session = NSURLSession.sharedSession()
         let url = URL(string: urlString)!
         
         let task = session.dataTask(with: url, completionHandler: {
             (data, response, error) -> Void in
             
-            DispatchQueue.main.async {
-                if error != nil {
+            if error != nil {
+                DispatchQueue.main.async {
                     completion((error!.localizedDescription))
-                } else {
-                    completion("NSURLSession successful")
-                    print(data)
                 }
+                
+            } else {
+                
+                //Added for JSONSerialization
+                //print(data)
+                do {
+                    /* .AllowFragments - top level object is not Array or Dictionary.
+                     Any type of string or value
+                     NSJSONSerialization requires the Do / Try / Catch
+                     Converts the NSDATA into a JSON Object and cast it to a Dictionary */
+                    
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+                        as? JSONDictionary {
+                        
+                        print(json)
+                        
+                        let priority = DispatchQueue.GlobalQueuePriority.high
+                        DispatchQueue.global(priority: priority).async {
+                            DispatchQueue.main.async {
+                                completion("JSONSerialization Successful")
+                            }
+                        }
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        completion("error in NSJSONSerialization")
+                    }
+                    
+                }
+                //End of JSONSerialization
+                
             }
         })
+
         task.resume()
     }
 
