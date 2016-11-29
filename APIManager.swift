@@ -33,6 +33,7 @@ class APIManager {
                 }
             }
         })
+        
         task.resume()
     }
 
