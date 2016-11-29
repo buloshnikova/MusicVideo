@@ -16,6 +16,14 @@ class Videos {
     private var _vImageUrl:String
     private var _vVideoUrl:String
     
+    private var _vRights:String
+    private var _vPrice:String
+    private var _vArtist:String
+    private var _vImid:String
+    private var _vGenre:String
+    private var _vLinkToiTunes:String
+    private var _vReleaseDte:String
+    
     // Getter
     
     var vName: String {
@@ -58,6 +66,66 @@ class Videos {
             _vVideoUrl = vVideoUrl
         } else {
             _vVideoUrl = ""
+        }
+        
+        // Rights
+        if let rights = data["rights"] as? JSONDictionary,
+            let vRights = rights["label"] as? String {
+            _vRights = vRights
+        } else {
+            _vRights = ""
+        }
+        
+        // Price
+        if let price = data["im:price"] as? JSONDictionary,
+            let vPrice = price["label"] as? String {
+            _vPrice = vPrice
+        } else {
+            _vPrice = ""
+        }
+        
+        // Artist
+        if let artist = data["im:artist"] as? JSONDictionary,
+            let vArtist = artist["label"] as? String {
+            _vArtist = vArtist
+        } else {
+            _vArtist = ""
+        }
+        
+        // Imid
+        if let id = data["id"] as? JSONDictionary,
+            let idattr = id["attributes"] as? JSONDictionary,
+            let imid = idattr["im:id"] as? String  {
+            _vImid = imid
+        } else {
+            _vImid = ""
+        }
+        
+        // Genre
+        if let category = data["category"] as? JSONDictionary,
+            let categoryattr = category["attributes"] as? JSONDictionary,
+            let term = categoryattr["term"] as? String  {
+            _vGenre = term
+        } else {
+            _vGenre = ""
+        }
+
+        
+        // Link to iTunes
+        if let iTunes = data["id"] as? JSONDictionary,
+            let iTunesLabel = iTunes["label"] as? String {
+            _vLinkToiTunes = iTunesLabel
+        } else {
+            _vLinkToiTunes = ""
+        }
+        
+        // Release date
+        if let releaseDate = data["im:releaseDate"] as? JSONDictionary,
+            let dateAttr = releaseDate["attributes"] as? JSONDictionary,
+            let dateLabel = dateAttr["label"] as? String  {
+            _vReleaseDte = dateLabel
+        } else {
+            _vReleaseDte = ""
         }
     }
     
