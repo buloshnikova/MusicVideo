@@ -10,7 +10,7 @@ import Foundation
 
 class APIManager {
     
-    func loadData(_ urlString:String, completion: ([Videos]) -> Void ) {
+    func loadData(_ urlString:String, completion: @escaping ([Videos]) -> Void ) {
         
         
         let config = URLSessionConfiguration.ephemeral
@@ -58,9 +58,9 @@ class APIManager {
                         }
                     }
                 } catch {
-                    DispatchQueue.main.async {
-                        completion("error in NSJSONSerialization")
-                    }
+//                    DispatchQueue.main.async {
+//                        completion("error in NSJSONSerialization")
+//                    }
                     
                 }
                 //End of JSONSerialization
