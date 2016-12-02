@@ -9,7 +9,6 @@
 import UIKit
 
 class MusicVideoTVC: UITableViewController {
-
     
     var videos = [Videos]()
     
@@ -39,7 +38,7 @@ class MusicVideoTVC: UITableViewController {
     {
         switch reachabilityStatus {
         case NOACCESS:
-            view.backgroundColor = UIColor.red
+            //view.backgroundColor = UIColor.red
             
             // move back to Main Queue
             DispatchQueue.main.async {
@@ -68,7 +67,7 @@ class MusicVideoTVC: UITableViewController {
             self.present(alert, animated: true, completion: nil)
             }
         default:
-            view.backgroundColor = UIColor.green
+            //view.backgroundColor = UIColor.green
             if videos.count > 0 {
                 print ("do not refresh API")
             } else {
@@ -80,7 +79,7 @@ class MusicVideoTVC: UITableViewController {
     func runAPI() {
         //Call API
         let api = APIManager()
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=50/json", completion: didLoadData)
+        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=200/json", completion: didLoadData)
     }
     
     // Is called when the object is about to be deallocated
@@ -101,14 +100,14 @@ class MusicVideoTVC: UITableViewController {
         return videos.count
     }
 
+    private struct storyboard {
+        static let cellReuseidentifier = "cell"
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: storyboard.cellReuseidentifier, for: indexPath) as! MusicVideoTableViewCell
         
-        let video = videos[indexPath.row]
-        
-        cell.textLabel?.text = ("\(indexPath.row + 1)")
-        cell.detailTextLabel?.text = video.vName
+        cell.video = videos[indexPath.row]
         
         return cell
     }
