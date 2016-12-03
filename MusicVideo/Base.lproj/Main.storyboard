@@ -33,15 +33,15 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="musicTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXt-o7-yUA">
-                                            <rect key="frame" x="177" y="67" width="203" height="77"/>
+                                            <rect key="frame" x="177" y="81" width="203" height="63"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtB-x6-Z1X">
-                                            <rect key="frame" x="177" y="22" width="195" height="27"/>
+                                            <rect key="frame" x="177" y="22" width="195" height="51"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="27" id="f2E-vv-sAw"/>
+                                                <constraint firstAttribute="height" constant="51" id="f2E-vv-sAw"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,16 +50,16 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstItem="6k9-7I-kv5" firstAttribute="bottom" secondItem="aXt-o7-yUA" secondAttribute="bottom" id="064-VN-ELH"/>
-                                        <constraint firstItem="xtB-x6-Z1X" firstAttribute="leading" secondItem="aXt-o7-yUA" secondAttribute="leading" id="5Bk-Q7-8hJ"/>
-                                        <constraint firstItem="6k9-7I-kv5" firstAttribute="top" secondItem="0LJ-RY-ydG" secondAttribute="topMargin" constant="14" id="GcT-8K-PJ3"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="xtB-x6-Z1X" secondAttribute="trailing" constant="-5" id="Kge-fL-TqT"/>
-                                        <constraint firstItem="6k9-7I-kv5" firstAttribute="top" secondItem="xtB-x6-Z1X" secondAttribute="top" id="R3I-7g-h4z"/>
-                                        <constraint firstItem="aXt-o7-yUA" firstAttribute="top" secondItem="xtB-x6-Z1X" secondAttribute="bottom" constant="18" id="VRR-ZK-4fJ"/>
-                                        <constraint firstItem="xtB-x6-Z1X" firstAttribute="leading" secondItem="6k9-7I-kv5" secondAttribute="trailing" constant="22" id="bi3-4I-0f9"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="aXt-o7-yUA" secondAttribute="trailing" constant="-13" id="jIp-WK-q6e"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="6k9-7I-kv5" secondAttribute="bottom" constant="16" id="nfn-OJ-J9n"/>
-                                        <constraint firstItem="6k9-7I-kv5" firstAttribute="leading" secondItem="0LJ-RY-ydG" secondAttribute="leadingMargin" id="oyw-DG-PGI"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6k9-7I-kv5" secondAttribute="bottom" constant="16" id="5Qj-sA-5wi"/>
+                                        <constraint firstItem="xtB-x6-Z1X" firstAttribute="leading" secondItem="aXt-o7-yUA" secondAttribute="leading" id="JAm-vf-uFg"/>
+                                        <constraint firstItem="6k9-7I-kv5" firstAttribute="leading" secondItem="0LJ-RY-ydG" secondAttribute="leadingMargin" id="M1c-JN-dgZ"/>
+                                        <constraint firstItem="6k9-7I-kv5" firstAttribute="top" secondItem="0LJ-RY-ydG" secondAttribute="topMargin" constant="14" id="Q9A-en-QEe"/>
+                                        <constraint firstItem="6k9-7I-kv5" firstAttribute="bottom" secondItem="aXt-o7-yUA" secondAttribute="bottom" id="TtD-Kh-tTQ"/>
+                                        <constraint firstItem="xtB-x6-Z1X" firstAttribute="top" secondItem="0LJ-RY-ydG" secondAttribute="topMargin" constant="14" id="ZNv-Hj-UfR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="xtB-x6-Z1X" secondAttribute="trailing" constant="-5" id="aI6-K7-lL0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="aXt-o7-yUA" secondAttribute="trailing" constant="-13" id="esg-6G-ND9"/>
+                                        <constraint firstItem="aXt-o7-yUA" firstAttribute="top" secondItem="xtB-x6-Z1X" secondAttribute="bottom" constant="8" id="hRQ-UB-3uD"/>
+                                        <constraint firstItem="xtB-x6-Z1X" firstAttribute="leading" secondItem="6k9-7I-kv5" secondAttribute="trailing" constant="22" id="jJ8-Zt-XTM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

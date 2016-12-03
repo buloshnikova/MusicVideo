@@ -15,12 +15,19 @@ class MusicVideoTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.reachabilityStatusChanged), name: NSNotification.Name(rawValue: "ReachStatusChanged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MusicVideoTVC.reachabilityStatusChanged), name: NSNotification.Name(rawValue: "ReachStatusChanged"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(MusicVideoTVC.preferredFontChange), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
+        
+
+    
         reachabilityStatusChanged()
         
     }
     
+    func preferredFontChange() {
+        print("The preferred Font has changed")
+    }
     
     func didLoadData(_ videos: [Videos]) {
         print(reachabilityStatus)
@@ -86,6 +93,8 @@ class MusicVideoTVC: UITableViewController {
     deinit
     {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "ReachStatusChanged"), object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "preferredFontChange"), object: nil)
     }
 
     // MARK: - Table view data source
