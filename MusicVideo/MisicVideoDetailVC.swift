@@ -27,6 +27,13 @@ class MisicVideoDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(MusicVideoTVC.preferredFontChange), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
+        
+        vName.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        vPrice.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        vRights.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        vGenre.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        
         title = videos.vArtist
         vName.text = videos.vName
         vPrice.text = videos.vPrice
@@ -38,6 +45,11 @@ class MisicVideoDetailVC: UIViewController {
         } else {
             videoImage.image = UIImage(named: "imageNotAvailable")
         }
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "preferredFontChange"), object: nil)
     }
 
     
