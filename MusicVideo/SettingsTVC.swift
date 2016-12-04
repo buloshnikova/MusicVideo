@@ -25,6 +25,14 @@ class SettingsTVC: UITableViewController {
     
     @IBOutlet weak var sliderCnt: UISlider!
     
+    @IBAction func touchIdSecurity(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard
+        if touchID.isOn {
+            defaults.set(touchID.isOn, forKey: "SecSetting")
+        } else {
+            defaults.set(false, forKey: "SecSetting")
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -34,7 +42,9 @@ class SettingsTVC: UITableViewController {
         
         tableView.alwaysBounceVertical = false
         
+        title = "Settings"
         
+        touchID.isOn = UserDefaults.standard.bool(forKey: "SecSetting")
         
         
     }
