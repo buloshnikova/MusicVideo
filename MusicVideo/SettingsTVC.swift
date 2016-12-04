@@ -35,6 +35,13 @@ class SettingsTVC: UITableViewController {
     }
     
     
+    @IBAction func valueChanged(_ sender: UISlider) {
+        let defaults =  UserDefaults.standard
+        defaults.set(Int(sliderCnt.value), forKey: "APICNT")
+        APICnt.text = ("\(Int(sliderCnt.value))")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,6 +53,11 @@ class SettingsTVC: UITableViewController {
         
         touchID.isOn = UserDefaults.standard.bool(forKey: "SecSetting")
         
+        if (UserDefaults.standard.object(forKey: "APICNT") != nil) {
+            let theValue = UserDefaults.standard.object(forKey: "APICNT") as! Int
+            APICnt.text = "\(theValue)"
+            sliderCnt.value = Float(theValue)
+        }
         
     }
     

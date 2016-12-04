@@ -164,7 +164,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ro4-TA-kY1">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ro4-TA-kY1">
                                                     <rect key="frame" x="350" y="26" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="touchIdSecurity:" destination="Gg9-6W-6eP" eventType="valueChanged" id="Ggf-Vw-nrN"/>
@@ -196,7 +196,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IOy-Tw-Qo9">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IOy-Tw-Qo9">
                                                     <rect key="frame" x="350" y="31" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
@@ -216,7 +216,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9A-1y-fhO">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9A-1y-fhO">
                                                     <rect key="frame" x="192" y="12" width="31" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="31" id="RPK-J1-2xm"/>
@@ -240,15 +240,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1vK-Qg-NTL">
-                                                    <rect key="frame" x="148" y="6" width="118" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="10" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="1vK-Qg-NTL">
+                                                    <rect key="frame" x="32" y="6" width="341" height="31"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="114" id="1y4-oc-XnB"/>
+                                                        <constraint firstAttribute="width" constant="337" id="1y4-oc-XnB"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="valueChanged:" destination="Gg9-6W-6eP" eventType="valueChanged" id="sLU-QT-xaN"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="1vK-Qg-NTL" firstAttribute="centerX" secondItem="hDy-4C-C7R" secondAttribute="centerX" id="FFs-Mh-73o"/>
+                                                <constraint firstItem="1vK-Qg-NTL" firstAttribute="centerX" secondItem="hDy-4C-C7R" secondAttribute="centerX" constant="-4.5" id="FFs-Mh-73o"/>
                                                 <constraint firstItem="1vK-Qg-NTL" firstAttribute="top" secondItem="hDy-4C-C7R" secondAttribute="topMargin" constant="-2" id="gP7-qK-y8W"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -273,7 +276,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xU2-Co-Vbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="722"/>
+            <point key="canvasLocation" x="563.768115942029" y="721.46739130434787"/>
         </scene>
         <!--Misic Video DetailVC-->
         <scene sceneID="c4w-wA-Lhf">
