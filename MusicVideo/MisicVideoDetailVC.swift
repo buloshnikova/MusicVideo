@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class MisicVideoDetailVC: UIViewController {
 
@@ -51,5 +53,22 @@ class MisicVideoDetailVC: UIViewController {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "preferredFontChange"), object: nil)
     }
 
+    @IBAction func playVideo(_ sender: UIBarButtonItem) {
+        
+        let url = URL(string: videos.vVideoUrl)!
+        let player = AVPlayer(url: url)
+        
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        
+        self.present(playerViewController, animated: true) {
+            playerViewController.player?.play()
+        }
+        
+    }
+    
+    
+    
+    
     
 }

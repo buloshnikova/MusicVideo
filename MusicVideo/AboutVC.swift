@@ -23,7 +23,7 @@ class AboutVC: UIViewController {
 
         title = "About"
         aboutText.text = "Some text"
-        
+        imageAbout.image = UIImage(named: "imageNotAvailable")
     }
 
     func preferredFontChange() {

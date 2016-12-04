@@ -293,26 +293,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Why us?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IL-7j-D9R">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why us?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IL-7j-D9R">
                                 <rect key="frame" x="186" y="62" width="59" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="g08-t0-Qtl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rzB-1h-sSo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rzB-1h-sSo">
                                 <rect key="frame" x="20" y="106" width="374" height="207"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-3i-VNJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-3i-VNJ">
                                 <rect key="frame" x="20" y="353" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rzB-1h-sSo" firstAttribute="leading" secondItem="9tk-bp-blZ" secondAttribute="leadingMargin" id="0TG-dG-Ng2"/>
+                            <constraint firstItem="rzB-1h-sSo" firstAttribute="trailing" secondItem="9tk-bp-blZ" secondAttribute="trailingMargin" id="D5D-HD-VSf"/>
+                            <constraint firstItem="rzB-1h-sSo" firstAttribute="leading" secondItem="g6i-3i-VNJ" secondAttribute="leading" id="TYX-BG-axv"/>
+                            <constraint firstItem="rzB-1h-sSo" firstAttribute="top" secondItem="9IL-7j-D9R" secondAttribute="bottom" constant="23" id="YIt-rL-nr5"/>
+                            <constraint firstItem="9IL-7j-D9R" firstAttribute="top" secondItem="9tk-bp-blZ" secondAttribute="topMargin" constant="62" id="e95-iO-Ls2"/>
+                            <constraint firstItem="g6i-3i-VNJ" firstAttribute="centerY" secondItem="9tk-bp-blZ" secondAttribute="centerY" id="eCp-re-lbl"/>
+                            <constraint firstItem="9IL-7j-D9R" firstAttribute="leading" secondItem="9tk-bp-blZ" secondAttribute="leading" constant="186" id="fmf-Bo-I55"/>
+                            <constraint firstItem="rzB-1h-sSo" firstAttribute="trailing" secondItem="g6i-3i-VNJ" secondAttribute="trailing" id="h9S-a1-91I"/>
+                            <constraint firstItem="g6i-3i-VNJ" firstAttribute="top" secondItem="rzB-1h-sSo" secondAttribute="bottom" constant="40" id="xfu-JZ-oRG"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="aboutText" destination="g6i-3i-VNJ" id="uxc-gg-pm5"/>
@@ -397,6 +408,9 @@
                     <toolbarItems>
                         <barButtonItem systemItem="play" id="49K-RO-E8U">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="playVideo:" destination="Yjj-Xn-Uog" id="2ll-sB-sRY"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Y4s-zN-RVx"/>
                         <barButtonItem systemItem="action" id="7Xf-QU-myP">
