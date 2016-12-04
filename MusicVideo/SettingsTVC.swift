@@ -25,6 +25,11 @@ class SettingsTVC: UITableViewController {
     
     @IBOutlet weak var sliderCnt: UISlider!
     
+    private struct storyboard {
+        static let aboutIdentifier = "about"
+        
+    }
+    
     @IBAction func touchIdSecurity(_ sender: UISwitch) {
         let defaults = UserDefaults.standard
         if touchID.isOn {
@@ -69,6 +74,7 @@ class SettingsTVC: UITableViewController {
         APICnt.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
     }
     
+
     deinit
     {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "preferredFontChange"), object: nil)

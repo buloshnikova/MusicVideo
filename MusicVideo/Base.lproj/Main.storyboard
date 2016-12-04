@@ -123,6 +123,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="vIU-Rh-ijh" secondAttribute="bottom" constant="9.6666666666666714" id="X9H-mQ-c9C"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="r1g-le-yvb" kind="show" identifier="about" id="rP8-ob-OlA"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="J4f-nN-dcB">
                                         <rect key="frame" x="0.0" y="70" width="414" height="70"/>
@@ -277,6 +280,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xU2-Co-Vbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="563.768115942029" y="721.46739130434787"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="hQo-C7-X6e">
+            <objects>
+                <viewController id="r1g-le-yvb" customClass="AboutVC" customModule="MusicVideo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kJT-3m-FlX"/>
+                        <viewControllerLayoutGuide type="bottom" id="eDa-fX-fFI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9tk-bp-blZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Why us?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IL-7j-D9R">
+                                <rect key="frame" x="186" y="62" width="59" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rzB-1h-sSo">
+                                <rect key="frame" x="20" y="106" width="374" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-3i-VNJ">
+                                <rect key="frame" x="20" y="353" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="aboutText" destination="g6i-3i-VNJ" id="uxc-gg-pm5"/>
+                        <outlet property="imageAbout" destination="rzB-1h-sSo" id="Pp3-LL-Gva"/>
+                        <outlet property="subtitle" destination="9IL-7j-D9R" id="iA3-WA-JiC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y55-vS-3G8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340.5797101449277" y="713.31521739130437"/>
         </scene>
         <!--Misic Video DetailVC-->
         <scene sceneID="c4w-wA-Lhf">
