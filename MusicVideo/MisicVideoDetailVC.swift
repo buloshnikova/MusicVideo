@@ -92,27 +92,27 @@ class MisicVideoDetailVC: UIViewController {
                     
                     alert.title = "Unsuccessful!"
                     
-                    switch LAError(_nsError: policyError!.code)! {
+                    switch LAError(_nsError: policyError! as NSError) {
                         
-                    case .AppCancel:
+                    case LAError.appCancel:
                         alert.message = "Authentication was cancelled by application"
                         
-                    case .AuthenticationFailed:
+                    case LAError.authenticationFailed:
                         alert.message = "The user failed to provide valid credentials"
                         
-                    case .PasscodeNotSet:
+                    case LAError.passcodeNotSet:
                         alert.message = "Passcode is not set on the device"
                         
-                    case .SystemCancel:
+                    case LAError.systemCancel:
                         alert.message = "Authentication was cancelled by the system"
                         
-                    case .TouchIDLockout:
+                    case LAError.touchIDLockout:
                         alert.message = "Too many failed attempts."
                         
-                    case .UserCancel:
+                    case LAError.userCancel:
                         alert.message = "You cancelled the request"
                         
-                    case .UserFallback:
+                    case LAError.userFallback:
                         alert.message = "Password not accepted, must use Touch-ID"
                         
                     default:
@@ -121,8 +121,9 @@ class MisicVideoDetailVC: UIViewController {
                     }
                     
                     // Show the alert
-                    dispatch_get_main_queue().asynchronously() { [unowned self] in
-                        self.presentViewController(alert, animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        [unowned self] in
+                        self.present(alert, animated: true, completion: nil)
                     }
                 }
             })
@@ -133,18 +134,18 @@ class MisicVideoDetailVC: UIViewController {
             alert.title = "Error"
             
             // Set the error alert message with more information
-            switch LAError(_nsError: touchIDError!.code)! {
+            switch LAError.Code(rawValue: touchIDError!.code)! {
                 
-            case .TouchIDNotEnrolled:
+            case .touchIDNotEnrolled:
                 alert.message = "Touch ID is not enrolled"
                 
-            case .TouchIDNotAvailable:
+            case .touchIDNotAvailable:
                 alert.message = "TouchID is not available on the device"
                 
-            case .PasscodeNotSet:
+            case .passcodeNotSet:
                 alert.message = "Passcode has not been set"
                 
-            case .InvalidContext:
+            case .invalidContext:
                 alert.message = "The context is invalid"
                 
             default:
@@ -152,8 +153,8 @@ class MisicVideoDetailVC: UIViewController {
             }
             
             // Show the alert
-            dispatch_get_main_queue().asynchronously() { [unowned self] in
-                self.presentViewController(alert, animated: true, completion: nil)
+            DispatchQueue.main.async () { [unowned self] in
+                self.present(alert, animated: true, completion: nil)
             }
         }
         
