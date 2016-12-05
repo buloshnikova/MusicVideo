@@ -12,6 +12,12 @@ class MusicVideoTVC: UITableViewController {
     
     var videos = [Videos]()
     
+    var filterSearch = [Videos]()
+    
+    let resultSearchController = UISearchController(searchResultsController: nil)
+    
+    
+    
     var limit = 10
     
     override func viewDidLoad() {
@@ -43,6 +49,16 @@ class MusicVideoTVC: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
         
         title = ("The iTunes Top \(limit) Music Videos")
+        
+        definesPresentationContext = true
+        
+        resultSearchController.dimsBackgroundDuringPresentation = false
+        
+        resultSearchController.searchBar.placeholder = "Search for Artist"
+        
+        resultSearchController.searchBar.searchBarStyle = UISearchBarStyle.prominent
+        
+        tableView.tableHeaderView = resultSearchController.searchBar
         
         tableView.reloadData()
     }
@@ -131,7 +147,10 @@ class MusicVideoTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if resultSearchController.isActive {
+            return filterSearch.count
+        }
+        
         return videos.count
     }
 
@@ -144,7 +163,12 @@ class MusicVideoTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: storyboard.cellReuseidentifier, for: indexPath) as! MusicVideoTableViewCell
         
-        cell.video = videos[indexPath.row]
+        if resultSearchController.isActive {
+            cell.video = filterSearch[indexPath.row]
+        } else  {
+        
+            cell.video = videos[indexPath.row]
+        }
         
         return cell
     }
@@ -192,7 +216,13 @@ class MusicVideoTVC: UITableViewController {
         if segue.identifier == storyboard.segueIdentifier
         {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let video = videos[indexPath.row]
+                let video: Videos
+                
+                if resultSearchController.isActive {
+                    video = filterSearch[indexPath.row]
+                } else {
+                    video = videos[indexPath.row]
+                }
                 let dvc = segue.destination as! MisicVideoDetailVC
                 dvc.videos = video
             }
