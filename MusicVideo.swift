@@ -29,6 +29,9 @@ class Videos {
     //gets created from the UI
     var vImageData:NSData?
     
+    var imageQuality:Bool = UserDefaults.standard.bool(forKey: "QualitySetting")
+    
+    
     // Getter
     
     var vName: String {
@@ -86,7 +89,13 @@ class Videos {
         if let imgarray = data["im:image"] as? JSONArray,
         let img = imgarray[2] as? JSONDictionary,
             let image = img["label"] as? String {
-            _vImageUrl = image.replacingOccurrences(of: "100x100", with: "600x600")
+            //if switch is off or switch is on and Cellular = 300 X 300
+            if !imageQuality || reachabilityStatus == WWAN {
+                _vImageUrl = image.replacingOccurrences(of: "100x100", with: "300x300")
+            } else {
+                // switdh is on and WIFI
+                _vImageUrl = image.replacingOccurrences(of: "100x100", with: "600x600")
+            }
         } else {
             _vImageUrl = ""
         }

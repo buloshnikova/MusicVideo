@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MusicVideoTVC: UITableViewController, UISearchResultsUpdating {
+class MusicVideoTVC: UITableViewController {
     
     var videos = [Videos]()
     
@@ -236,10 +236,7 @@ class MusicVideoTVC: UITableViewController, UISearchResultsUpdating {
         }
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
-        searchController.searchBar.text!.lowercased()
-        filterSearch(searchController.searchBar.text!)
-    }
+    
  
     func filterSearch(_ searchText: String) {
         filterSearch = videos.filter { videos in
@@ -252,3 +249,8 @@ class MusicVideoTVC: UITableViewController, UISearchResultsUpdating {
     
 }
 
+extension MusicVideoTVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterSearch(searchController.searchBar.text!.lowercased())
+    }
+}

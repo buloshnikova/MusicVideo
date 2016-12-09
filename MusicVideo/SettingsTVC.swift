@@ -26,6 +26,8 @@ class SettingsTVC: UITableViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var sliderCnt: UISlider!
     
+    @IBOutlet weak var imageQuality: UISwitch!
+    
     private struct storyboard {
         static let aboutIdentifier = "about"
         
@@ -47,6 +49,14 @@ class SettingsTVC: UITableViewController, MFMailComposeViewControllerDelegate {
         APICnt.text = ("\(Int(sliderCnt.value))")
     }
     
+    @IBAction func switchImageQuality(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard
+        if imageQuality.isOn {
+            defaults.set(imageQuality.isOn, forKey: "QualitySetting")
+        } else {
+            defaults.set(false, forKey: "QualitySetting")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

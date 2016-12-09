@@ -85,6 +85,7 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="keL-8d-VDW"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Vr7-L3-OBS">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refresh:" destination="BCf-xM-q83" eventType="valueChanged" id="3Sp-4W-7HN"/>
@@ -207,6 +208,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IOy-Tw-Qo9">
                                                     <rect key="frame" x="350" y="31" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchImageQuality:" destination="Gg9-6W-6eP" eventType="valueChanged" id="m9H-rz-SHi"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -278,6 +282,7 @@
                         <outlet property="aboutDisplay" destination="vIU-Rh-ijh" id="DXl-Cn-ixT"/>
                         <outlet property="bestImageDisplay" destination="rWf-QQ-9pv" id="IdB-fh-PxV"/>
                         <outlet property="feedbackDisplay" destination="bbx-sr-6yX" id="c3e-Xz-dNc"/>
+                        <outlet property="imageQuality" destination="IOy-Tw-Qo9" id="OKT-QJ-NOT"/>
                         <outlet property="securityDisplay" destination="RhZ-ON-9F6" id="u10-Qr-xuM"/>
                         <outlet property="sliderCnt" destination="1vK-Qg-NTL" id="jmV-zd-KVy"/>
                         <outlet property="touchID" destination="Ro4-TA-kY1" id="3gC-0k-iaB"/>
